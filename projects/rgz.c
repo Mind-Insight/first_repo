@@ -106,7 +106,8 @@ int rgz() {
             if (new_carry) {
                 int idx = ind + 1;
                 while (new_carry) {
-                    if (idx >= 200) break;
+                    // Исправлено: было idx >= 200, что не позволяло обработать перенос в разряд 200
+                    if (idx > 200) break;
                     res[idx] += new_carry;
                     new_carry = res[idx] / 16;
                     res[idx] %= 16;
