@@ -53,13 +53,13 @@ bool checkBracketBalance(char* s, int* i, char arg_close) {
 }
 
 // ИСПРАВЛЕНО: переименовали rec в main (или можно было оставить rec и добавить main)
-int main() {
+int rec() {
     setlocale(LC_ALL, "ru");
     char s[N];
     fgets(s, N, stdin);                // ИСПРАВЛЕНО: убрали sizeof(char) – он равен 1
     s[strcspn(s, "\n")] = '\0';        // удаляем перевод строки
     int i = 0;
     // ИСПРАВЛЕНО: передаём s, а не &s
-    printf("result: %d", checkBracketBalance(s, &i, 0) && s[i] == '\0');
+    printf("result: %d" "\n", checkBracketBalance(s, &i, 0) && s[i] == '\0');
     return 0;
 }
