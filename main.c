@@ -49,6 +49,8 @@ int main() {
         printf("0. Выход\n");
         printf("Выберите проект: ");
         scanf("%d", &choice);
+        int c;
+        while ((c = getchar()) != '\n' && c != EOF);
 
         switch (choice) {
         case 1:
